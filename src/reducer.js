@@ -65,7 +65,7 @@ export function getRepoDetail(user, repo) {
     type: GET_REPO_INFO,
     payload: {
       request: {
-        url: `/users/${user}/${repo}`
+        url: `/repos/${user}/${repo}`
       }
     }
   };
