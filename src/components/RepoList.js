@@ -10,7 +10,7 @@ class RepoList extends Component {
   }
   renderItem = ({ item }) => (
     <View style={styles.item}>
-      <Text>{item.name}</Text>
+      <Text onPress={() => this.props.navigation.navigate("Detail")}>{item.name}</Text>
     </View>
   );
   render() {
