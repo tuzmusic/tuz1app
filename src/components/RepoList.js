@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { TouchableOpacity, View, Text, FlatList, StyleSheet } from "react-native";
 import { connect } from "react-redux";
-
 import { listRepos } from "../reducer";
+import * as ENV from "../../environment.js"
 
 class RepoList extends Component {
   componentDidMount() {
-    this.props.listRepos("tuzmusic");
+    this.props.listRepos(ENV.USERNAME);
   }
   renderItem = ({ item }) => (
     <TouchableOpacity

@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import { View, Button, Text } from "react-native";
 import { connect } from "react-redux";
 import { getRepoDetail } from "../reducer";
+import * as ENV from "../../environment.js";
 
 class RepoDetail extends Component {
   static navigationOptions = { title: "RepoDetail" };
 
   componentDidMount = () => {
     const { name } = this.props.navigation.state.params
-    this.props.getRepoDetail("tuzmusic", name);
+    this.props.getRepoDetail(ENV.USERNAME, name);
   };
 
   render() {
