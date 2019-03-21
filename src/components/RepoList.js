@@ -6,7 +6,7 @@ import * as ENV from "../../environment.js"
 
 class RepoList extends Component {
   componentDidMount() {
-    this.props.listRepos(ENV.USERNAME);
+    this.props.listRepos(this.props.username);
   }
   renderItem = ({ item }) => (
     <TouchableOpacity
@@ -45,7 +45,7 @@ const mapStateToProps = state => {
     ...repo
   }));
   return {
-    repos: storedRepositories
+    repos: storedRepositories,
   };
 };
 

@@ -14,8 +14,7 @@ import reducer from "./src/reducer";
 import RepoList from "./src/components/RepoList";
 import RepoDetail from "./src/components/RepoDetail";
 import Profile from "./src/components/Profile";
-// import Stack from "./src/components/Stack";
-// import Tabs from "./src/components/Tabs";
+import UserSelect from "./src/components/SelectUser";
 
 const client = axios.create({
   baseURL: "https://api.github.com",
@@ -25,21 +24,18 @@ const client = axios.create({
 const store = createStore(reducer, applyMiddleware(axiosMiddleware(client)));
 
 const Tabs = createBottomTabNavigator({
-  RepoList: {
-    screen: RepoList
-  },
-  Profile: {
-    screen: Profile
-  }
+  RepoList: RepoList,
+  Profile: Profile
 });
 
 const Stack = createStackNavigator(
   {
-    Home: { screen: Tabs },
+    Select: UserSelect, 
+    List: RepoList,
     Detail: RepoDetail
   },
   {
-    initialRouteName: "Home"
+    initialRouteName: "Select"
   }
 );
 
