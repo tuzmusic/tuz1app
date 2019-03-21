@@ -7,7 +7,8 @@ class RepoDetail extends Component {
   static navigationOptions = { title: "RepoDetail" };
 
   componentDidMount = () => {
-    this.props.getRepoDetail("tuzmusic", "archivist");
+    const { name } = this.props.navigation.state.params
+    this.props.getRepoDetail("tuzmusic", name);
   };
 
   render() {

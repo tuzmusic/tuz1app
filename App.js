@@ -33,24 +33,24 @@ const Tabs = createBottomTabNavigator({
   }
 });
 
-const AppNavigator = createStackNavigator(
+const Stack = createStackNavigator(
   {
     Home: { screen: Tabs },
     Detail: RepoDetail
   },
   {
-    initialRouteName: "Detail"
+    initialRouteName: "Home"
   }
 );
 
-const AppContainer = createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(Stack);
 
 export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <AppContainer>
-          <AppNavigator style={styles.container} />
+          <Stack style={styles.container} />
         </AppContainer>
       </Provider>
     );

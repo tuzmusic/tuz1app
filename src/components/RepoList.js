@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { TouchableOpacity, View, Text, FlatList, StyleSheet } from "react-native";
 import { connect } from "react-redux";
 
 import { listRepos } from "../reducer";
@@ -9,9 +9,12 @@ class RepoList extends Component {
     this.props.listRepos("tuzmusic");
   }
   renderItem = ({ item }) => (
-    <View style={styles.item}>
-      <Text onPress={() => this.props.navigation.navigate("Detail")}>{item.name}</Text>
-    </View>
+    <TouchableOpacity
+      style={styles.item}
+      onPress={() => this.props.navigation.navigate("Detail", { name: item.name })}
+    >
+      <Text>{item.name}</Text>
+    </TouchableOpacity>
   );
   render() {
     const { repos } = this.props;
