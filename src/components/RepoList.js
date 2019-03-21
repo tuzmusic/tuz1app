@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { View, Text, FlatList, StyleSheet } from "react-native";
 import { connect } from "react-redux";
 
-import { listRepos } from "./reducer";
+import { listRepos } from "../reducer";
 
 class RepoList extends Component {
   componentDidMount() {
-    this.props.listRepos("relferreira");
+    this.props.listRepos("tuzmusic");
   }
   renderItem = ({ item }) => (
     <View style={styles.item}>
