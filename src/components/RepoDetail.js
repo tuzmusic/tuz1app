@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Button, Text } from "react-native";
 import { connect } from "react-redux";
 import { getRepoDetail } from "../reducer";
 
@@ -22,12 +22,16 @@ class RepoDetail extends Component {
     } = this.props.repoInfo;
 
     return (
-      <View>
+      <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
         <Text>{name}</Text>
         <Text>{full_name}</Text>
         <Text>{description}</Text>
         <Text>{forks_count}</Text>
         <Text>{stargazers_count}</Text>
+        <Button
+          title="Go to Details... again (push)"
+          onPress={() => this.props.navigation.push('Details')}
+        />
       </View>
     );
   }
