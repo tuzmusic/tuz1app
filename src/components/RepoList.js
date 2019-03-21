@@ -6,7 +6,8 @@ import * as ENV from "../../environment.js"
 
 class RepoList extends Component {
   componentDidMount() {
-    this.props.listRepos(this.props.username);
+    const { username } = this.props.navigation.state.params
+    this.props.listRepos(username);
   }
   renderItem = ({ item }) => (
     <TouchableOpacity
