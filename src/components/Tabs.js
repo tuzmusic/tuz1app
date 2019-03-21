@@ -1,8 +1,8 @@
-import { TabNavigator } from "react-navigation";
+import { TabNavigator } from 'react-navigation';
 import RepoList from "./RepoList";
 import Profile from "./Profile";
 
-const Tabs = TabNavigator({
+export const Tabs = TabNavigator({
   RepoList: { screen: RepoList },
   Profile: { screen: Profile }
 })

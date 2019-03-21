@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { createStore, applyMiddleware } from "redux";
 import { Provider, connect } from "react-redux";
+import { TabNavigator, StackNavigator } from "react-navigation";
 import axios from "axios";
 import axiosMiddleware from "redux-axios-middleware";
 
@@ -9,6 +10,8 @@ import reducer from "./src/reducer";
 import RepoList from "./src/components/RepoList";
 import RepoDetail from "./src/components/RepoDetail";
 import Profile from "./src/components/Profile";
+import Stack from "./src/components/Stack";
+import Tabs from "./src/components/Tabs";
 
 const client = axios.create({
   baseURL: "https://api.github.com",
@@ -22,7 +25,7 @@ export default class App extends React.Component {
     return (
       <Provider store={store}>
         <View style={styles.container}>
-          <RepoList />
+          <Stack />
         </View>
       </Provider>
     );
