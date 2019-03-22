@@ -38,6 +38,8 @@ export const TabNavigator = createBottomTabNavigator(
         let iconName;
         if (routeName === 'Home') {
           iconName = `ios-information-circle${focused ? "" : "-outline"}`;
+          // Icons at https://infinitered.github.io/ionicons-version-3-search/
+          // iconName = 'ios-home'
           // IconComponent = HomeIconWithBadge;
         } else if (routeName === 'Settings') {
           iconName = "ios-options";
@@ -46,7 +48,7 @@ export const TabNavigator = createBottomTabNavigator(
       },
     }),
     tabBarOptions: {
-      activeTintColor: 'tomato',
+      activeTintColor: 'green',
       inactiveTintColor: 'grey'
     }
   }
