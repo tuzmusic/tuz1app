@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import { Text, View, Button, Image } from "react-native";
 import {
   createBottomTabNavigator,
@@ -26,7 +27,7 @@ class HomeScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Here is the HOME SCREEN</Text>
+        <Text>Here is the HOME SCREEN!</Text>
         <Button
           title="Details"
           onPress={() => this.props.navigation.navigate("Details")}

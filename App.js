@@ -16,7 +16,8 @@ import RepoDetail from "./src/components/RepoDetail";
 import Profile from "./src/components/Profile";
 import UserSelect from "./src/components/SelectUser";
 
-import TabNavigator from "./src/components/Tabs";
+import MyNavigator from "./src/components/MyNavigator";
+import PlatformNavigator from "./src/components/PlatformNavigator";
 
 const client = axios.create({
   baseURL: "https://api.github.com",
@@ -47,10 +48,7 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-          <TabNavigator />
-        {/* <AppContainer> */}
-          {/* <Stack style={styles.container} /> */}
-        {/* </AppContainer> */}
+          <PlatformNavigator />
       </Provider>
     );
   }
