@@ -115,5 +115,5 @@ const DrawerNavigator = createDrawerNavigator({
   Settings: SettingsStack
 });
 
-// export default createAppContainer(TabNavigator);
-export default createAppContainer(DrawerNavigator);
+export default createAppContainer(TabNavigator);
+// export default createAppContainer(DrawerNavigator);
