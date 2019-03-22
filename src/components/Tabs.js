@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Text, View, Button } from "react-native";
+import { Text, View, Button, Image } from "react-native";
 import {
   createBottomTabNavigator,
   createTopTabNavigator,
+  createDrawerNavigator,
   createAppContainer,
   createStackNavigator
 } from "react-navigation";
@@ -14,7 +15,14 @@ import {
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 class HomeScreen extends Component {
-  static navigationOptions = { title: "Home" };
+  static navigationOptions = {
+    title: "Home",
+    // these drawer settings don't seem to do anything
+    drawerLabel: "HomeDrawer",
+    drawerIcon: ({ tintColor }) => {
+      <IconComponent name={"ios-home"} size={25} color='black' />;
+    }
+  };
   render() {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -75,7 +83,7 @@ const SettingsStack = createStackNavigator({
   Details: DetailsScreen
 });
 
-export const TabNavigator = createMaterialBottomTabNavigator(
+const TabNavigator = createMaterialBottomTabNavigator(
   {
     Home: HomeStack,
     Settings: SettingsStack
@@ -102,4 +110,10 @@ export const TabNavigator = createMaterialBottomTabNavigator(
   }
 );
 
-export default createAppContainer(TabNavigator);
+const DrawerNavigator = createDrawerNavigator({
+  Home: HomeStack,
+  Settings: SettingsStack
+});
+
+// export default createAppContainer(TabNavigator);
+export default createAppContainer(DrawerNavigator);
