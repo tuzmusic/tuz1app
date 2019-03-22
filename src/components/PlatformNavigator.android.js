@@ -26,10 +26,11 @@ class HomeScreen extends Component {
   };
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Here is the HOME SCREEN!</Text>
+      <View
+        style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+      >
+        <Text>Here is the Android HOME SCREEN!</Text>
         <Text>This is MyNavigator</Text>
-        <Text>This is an {Platform.OS === 'ios' ? 'iOS' : 'Android'} phone.</Text>
         <Button
           title="Details"
           onPress={() => this.props.navigation.navigate("Details")}

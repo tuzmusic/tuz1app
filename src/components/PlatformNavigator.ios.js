@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 
 import { Text, View, Button, Platform } from "react-native";
@@ -27,7 +28,8 @@ class HomeScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Here is the {Platform.OS === 'ios' ? "iOS" : "Android"} HOME SCREEN!</Text>
+        <Text>Here is the iOS HOME SCREEN!</Text>
+        <Text>This is MyNavigator</Text>
         <Button
           title="Details"
           onPress={() => this.props.navigation.navigate("Details")}
