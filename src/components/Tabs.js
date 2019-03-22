@@ -14,6 +14,7 @@ import {
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 class HomeScreen extends Component {
+  static navigationOptions = { title: "Home" };
   render() {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -28,6 +29,7 @@ class HomeScreen extends Component {
 }
 
 class SettingsScreen extends Component {
+  static navigationOptions = { title: "Settings" };
   render() {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -42,6 +44,7 @@ class SettingsScreen extends Component {
 }
 
 class DetailsScreen extends Component {
+  static navigationOptions = { title: "Details" };
   render() {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -66,6 +69,7 @@ const HomeStack = createStackNavigator({
   Home: HomeScreen,
   Details: DetailsScreen
 });
+
 const SettingsStack = createStackNavigator({
   Settings: SettingsScreen,
   Details: DetailsScreen
