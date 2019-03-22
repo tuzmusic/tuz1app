@@ -3,6 +3,8 @@ import { Text, View } from "react-native";
 import { createBottomTabNavigator, createAppContainer } from "react-navigation";
 // import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 
+import Ionicons from "react-native-vector-icons/Ionicons";
+
 class HomeScreen extends Component {
   render() {
     return (
@@ -23,9 +25,31 @@ class SettingsScreen extends Component {
   }
 }
 
-export const TabNavigator = createBottomTabNavigator({
-  Home: HomeScreen,
-  Settings: SettingsScreen
-});
+export const TabNavigator = createBottomTabNavigator(
+  {
+    Home: HomeScreen,
+    Settings: SettingsScreen
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let IconComponent = Ionicons;
+        let iconName;
+        if (routeName === 'Home') {
+          iconName = `ios-information-circle${focused ? "" : "-outline"}`;
+          // IconComponent = HomeIconWithBadge;
+        } else if (routeName === 'Settings') {
+          iconName = "ios-options";
+        }
+        return <IconComponent name={iconName} size={25} color={tintColor}/>
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'grey'
+    }
+  }
+);
 
 export default createAppContainer(TabNavigator);
