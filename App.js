@@ -16,6 +16,8 @@ import RepoDetail from "./src/components/RepoDetail";
 import Profile from "./src/components/Profile";
 import UserSelect from "./src/components/SelectUser";
 
+import TabNavigator from "./src/components/Tabs";
+
 const client = axios.create({
   baseURL: "https://api.github.com",
   responseType: "json"
@@ -30,7 +32,7 @@ const Tabs = createBottomTabNavigator({
 
 const Stack = createStackNavigator(
   {
-    Select: UserSelect, 
+    Select: UserSelect,
     List: RepoList,
     Detail: RepoDetail
   },
@@ -45,9 +47,10 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <AppContainer>
-          <Stack style={styles.container} />
-        </AppContainer>
+          <TabNavigator />
+        {/* <AppContainer> */}
+          {/* <Stack style={styles.container} /> */}
+        {/* </AppContainer> */}
       </Provider>
     );
   }
