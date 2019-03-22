@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Text, View } from "react-native";
 import { createBottomTabNavigator, createAppContainer } from "react-navigation";
-// import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
+import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 
@@ -19,13 +19,23 @@ class SettingsScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Here is the SETTINGS SCREEN</Text>
+        <Text>Here is the SETTINGS SCREEN DUDE</Text>
       </View>
     );
   }
 }
+const materialSettings = {
+  activeColor: 'blue',
+  inactiveColor: 'black',
+  barStyle: { backgroundColor: 'aliceblue' },
+}
 
-export const TabNavigator = createBottomTabNavigator(
+const tabBarOptions = {
+  activeTintColor: 'red',
+  inactiveTintColor: 'grey'
+}
+
+export const TabNavigator = createMaterialBottomTabNavigator(
   {
     Home: HomeScreen,
     Settings: SettingsScreen
@@ -47,10 +57,8 @@ export const TabNavigator = createBottomTabNavigator(
         return <IconComponent name={iconName} size={25} color={tintColor}/>
       },
     }),
-    tabBarOptions: {
-      activeTintColor: 'green',
-      inactiveTintColor: 'grey'
-    }
+    ...materialSettings,
+    tabBarOptions
   }
 );
 
